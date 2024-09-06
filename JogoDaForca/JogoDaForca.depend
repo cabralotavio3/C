@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1725015280 source:/home/alunos/Downloads/JogoDaForca/main.cpp
+	"Forca.h"
+	<iostream>
+
+1725017652 /home/alunos/Downloads/JogoDaForca/Forca.h
+	<iostream>
+
+1725017856 source:/home/alunos/Downloads/JogoDaForca/Forca.cpp
+	"Forca.h"
+
