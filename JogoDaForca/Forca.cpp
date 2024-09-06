@@ -6,7 +6,7 @@ void Forca::escolha_palavra(){
 }
 
 void Forca::montarP2(){
-    std::string p2 = "";
+    p2 = "";
     for(i=0; i < p1.length(); i++){
         p2 += '-';
         }
@@ -27,7 +27,7 @@ void Forca::teste_letra(){
 }
 
 bool Forca::verfifica_fimjg(){
-    bool acabou = false;
+    bool acabou = true;
      for(i=0; i < p2.length(); i++){
         if(p2[i] == '-'){
             acabou =false;

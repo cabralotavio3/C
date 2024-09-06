@@ -1,0 +1,3 @@
+Entrar na pasta correta(ls, cd)
+Compilar todos arquivos que vão ser usados(g++ -o prog 'Forca.h Forca.cpp main.cpp')
+Rodar o código(./prog)
