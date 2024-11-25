@@ -9,17 +9,15 @@ void Menu()
     cout << "2 - Listar \n";
     cout << "3 - Excluir \n";
     cout << "4 - Sair \n";
-    cout << " Informe sua opção : ";
+    cout << " Informe sua opcao : ";
 }
 
 int main()
 {
-    Lista **P, L;
+    Lista ** P, *pesq, obj;
     P = new Lista *[2];
-    P[0] = NULL;
-    P[1] = NULL;
-    string url, ncadastro;
-    int op;
+    string url;
+    int op, ncadastro;
     bool achei;
     do
     {
@@ -29,11 +27,15 @@ int main()
         {
         case 1:
             cout << " Informe o url : ";
-            cin.ignore();
-            getline(cin, url);
-            cout << " informe o ncadastro: ";
-            getline(cin, ncadastro);
-            P = L.Inserir(P, url, ncadastro);
+            cin >> url;
+            pesq = obj.Verifica_Url(P[0], url);
+            if(pesq == NULL){
+                P = obj.Inserir(P, url, 1);
+            }else{
+                ncadastro = pesq->Ncadastro +1;
+                P = obj.Excluir(P, url, &achei);
+                P =obj.Inserir(P, url, ncadastro);
+            }
             cout << " Inserido com sucesso !!\n ";
             break;
         case 2:
@@ -44,7 +46,7 @@ int main()
             else
             {
                 cout << " Lista de contatos\n\n";
-                L.Listar(P[0]);
+                obj.Listar(P[0]);
             }
             break;
         case 3:
@@ -57,7 +59,7 @@ int main()
                 cout << " Informe o url a ser excluido: ";
                 cin.ignore();
                 getline(cin, url);
-                P = L.Excluir(P, url, &achei);
+                P = obj.Excluir(P, url, &achei);
                 if (achei)
                     cout << " Excluido com sucesso!\n ";
                 else
